@@ -6,6 +6,12 @@
 
 https://github.com/user-attachments/assets/9118c6e1-07c9-4d78-b6a2-9eeec751d131
 
+## 🚀 Vision
+
+The goal of **CertiMint** was to make digital certificates **tamper-proof**, **verifiable**, and **easily accessible** — even for non-crypto users — by blending **web3 security** with **web2 simplicity**.
+
+However, during various hackathons, questions were raised about **scalability** and **feasibility**, which led to a deeper architectural rethink and the following proposed improvements.
+
 ## 🌟 Overview
 
 CertiMint is a full-stack solution consisting of three main components:
@@ -405,23 +411,6 @@ CertiMint/
 └── docker/                    # Docker configurations
 ```
 
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. **Fork the repository**
-2. **Create feature branch** (`git checkout -b feature/amazing-feature`)
-3. **Make changes** and test thoroughly
-4. **Commit changes** (`git commit -m 'Add amazing feature'`)
-5. **Push to branch** (`git push origin feature/amazing-feature`)
-6. **Open Pull Request**
-
-### Development Guidelines
-- Follow existing code style and conventions
-- Write comprehensive tests for new features
-- Update documentation for API changes
-- Ensure all security checks pass
-
 ## 🐛 Troubleshooting
 
 ### Common Issues
@@ -453,15 +442,71 @@ moccasin run deploy --network zksync-sepolia
 # Ensure sufficient testnet ETH balance
 ```
 
-## 📞 Support & Contact
+## 🧩 Proposed Scalability & Feasibility Enhancements
 
-- **GitHub Issues**: [Report bugs or request features](https://github.com/Rickyy-Sam07/CertiMint-Engine/issues)
-- **Discussions**: [Community discussions](https://github.com/Rickyy-Sam07/CertiMint-Engine/discussions)
-- **Email**: contact@certimint.com
+### 🏗️ Smart Contract Architecture
 
-## 📄 License
+- **Contract Factory Pattern** — for dynamic deployment and lifecycle management of per-user or per-institution contracts.  
+- **Minimal Proxies (Clones)** — to reduce deployment costs using the [EIP-1167](https://eips.ethereum.org/EIPS/eip-1167) standard.  
+- **Batch Minting** — institutions can mint multiple NFTs in a single transaction, optimizing gas and network efficiency.  
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+---
+
+### 💡 Wallet & User Experience
+
+- **Smart Wallets + Social Login (Abstracted Wallets)** — enabling seamless onboarding for non-crypto users.  
+- **zkSync Paymaster Integration** — to enable gasless transactions and sponsor minting fees for smoother UX.  
+
+---
+
+## ⚡ Blockchain & Network Choices
+
+### For **Public zkSync Chain**
+
+- NFTs are valid for **10 years**, requiring **renewal thereafter** (limitation).  
+- Currently, a **single contract architecture** with **GraphQL-based frontend fetching** works fine.  
+- Can evolve to **minimal contract clones** per user/institution for **modularity** and **horizontal scalability** (recommended long-term approach).  
+- **Batch Minting** and **Smart Wallet + Social Login** are under implementation.  
+- **Polygon Chain** offers **cheaper gas** and **permanent storage**, though with **security trade-offs**.  
+
+---
+
+### For **Private L2 Chains (e.g. custom zkRollup)**
+
+- Enables **custom fee control**, **enhanced privacy**, and **configurable scalability**.  
+- Certificates remain **private**, while **proofs can be anchored on public chains** for transparency and verifiability.  
+
+---
+
+## 📊 Data Layer
+
+- **Indexing via The Graph or zkIndex** for efficient NFT data retrieval and filtering.  
+- **Super-fast Frontend Performance** for a seamless user experience.
+  
+---
+## 💭 Personal Note
+
+I eventually paused work on **CertiMint** after someone mentioned that *“no one cares about certificates these days.”*  
+While I partly understand that perspective, I still believe **verifiable digital credentials** have huge potential — especially in **education**, **hiring**, and **identity systems**.
+
+If you find this concept interesting, feel free to **fork**, **build upon**, or **collaborate** on the improvements listed above.  
+There’s plenty of unexplored potential here — especially around **wallet abstraction**, **modular contract scaling**, and **zk-enabled privacy**.
+
+## 🤝 Contributing
+
+Contributions, ideas, and discussions are welcome!  
+You can help by:
+
+- Implementing **Minimal Proxy Factories**  
+- Building **zkSync Paymaster integrations**  
+- Improving **UI/UX for Web2 onboarding**  
+- Creating **Private L2 Rollup prototypes**
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — free for personal and commercial use.
 
 ## 🎖️ Acknowledgments
 
